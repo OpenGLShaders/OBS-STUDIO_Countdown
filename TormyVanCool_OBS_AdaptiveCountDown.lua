@@ -178,6 +178,11 @@ function script_properties()
 		end
 		obs.bfree(scene)
 	end
+	
+	local countdown_type = obs.obs_properties_add_list(props, "countdown_type", "Countdown To:", obs.OBS_COMBO_TYPE_EDITABLE, obs.OBS_COMBO_FORMAT_STRING)
+	obs.obs_property_list_add_string(countdown_type, "to_date", "To Date")
+	obs.obs_property_list_add_string(countdown_type, "hours_days", "Hours / Days")
+
 
 	obs.obs_properties_add_int(props, "days", "Days", 0, 366, 1)
 	obs.obs_properties_add_int(props, "hours", "Hours", 0, 23, 1)
